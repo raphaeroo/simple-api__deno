@@ -31,13 +31,8 @@ const userRespository = new UserRepository();
 const getUsers = async ({ response }: IUserController["getUsers"]) => {
   const allUsers = await userRespository.getAll();
 
-  if (allUsers) {
-    response.status = 200;
-    response.body = allUsers;
-  } else {
-    response.status = 200;
-    response.body = [];
-  }
+  response.status = 200;
+  response.body = allUsers;
 };
 
 const getUser = async ({ params, response }: IUserController["getUser"]) => {
